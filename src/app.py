@@ -11,7 +11,9 @@ class MainHandler(RequestHandler):
 
 class WebHookHandler(RequestHandler):
     def get(self):
+        print "I am a disco Dancer"
         print self.get_argument('hub_verify_token')
+        print "Naaho Gaao"
 
 
 def make_app():
