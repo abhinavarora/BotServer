@@ -11,9 +11,10 @@ class MainHandler(RequestHandler):
 
 class WebHookHandler(RequestHandler):
     def get(self):
-        print "I am a disco Dancer"
-        print self.get_argument('hub_verify_token')
-        print "Naaho Gaao"
+        if len(self.get_query_argument('hub.verify_token')) != 0 and self.get_query_argument('hub.verify_token')[0] == 'TERA_BAAP_KAUN_HAI_BC'
+            self.write(self.get_query_argument('hub.challenge'))
+        else
+            self.write("")
 
 
 def make_app():
