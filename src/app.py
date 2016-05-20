@@ -30,6 +30,10 @@ if __name__ == '__main__':
     http_server.listen(443)
     '''
 
-    app.listen(8888)
+    #app.listen(8888)
+
+    http_server = tornado.httpserver.HTTPServer(app)
+    port = int(os.environ.get("PORT", 5000))
+    http_server.listen(port)
 
     tornado.ioloop.IOLoop.current().start()
