@@ -1,2 +1,1 @@
 # BotServer
-Hello, Bot!
