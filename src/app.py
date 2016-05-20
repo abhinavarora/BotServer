@@ -11,7 +11,7 @@ class MainHandler(RequestHandler):
 
 class WebHookHandler(RequestHandler):
     def get(self):
-        print self.get_query_arguments('hub_verify_token')
+        print self.get_argument('hub_verify_token')
 
 
 def make_app():
