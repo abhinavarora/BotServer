@@ -2,7 +2,7 @@ import tornado.ioloop
 import tornado.web
 from tornado.web import RequestHandler
 import tornado.httpserver
-
+import os
 
 class MainHandler(RequestHandler):
     def get(self):
@@ -16,7 +16,7 @@ class WebHookHandler(RequestHandler):
 
 def make_app():
     return tornado.web.Application([(r"/webhook",WebHookHandler)
-        ,(r"/*",MainHandler)])
+        ,(r'/(favicon.ico)', tornado.web.StaticFileHandler, {"path": ""}),(r"/*",MainHandler)])
 
 
 if __name__ == '__main__':
