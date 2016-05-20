@@ -13,7 +13,7 @@ class WebHookHandler(RequestHandler):
     def get(self):
 
         print "Chor" + str(self.get_query_argument('hub.verify_token'))
-        if len(self.get_query_argument('hub.verify_token')) != 0 and self.get_query_argument('hub.verify_token')[0] == 'TERA_BAAP_KAUN_HAI_BC':
+        if self.get_query_argument('hub.verify_token') == 'TERA_BAAP_KAUN_HAI_BC':
             self.write(self.get_query_argument('hub.challenge'))
         else:
             self.write("")
