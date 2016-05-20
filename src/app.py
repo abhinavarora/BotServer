@@ -22,14 +22,14 @@ def make_app():
 if __name__ == '__main__':
     app = make_app()
 
-
+    '''
     http_server = tornado.httpserver.HTTPServer(app, ssl_options={
         "certfile": "/etc/ssl/certs/apache-selfsigned.crt",
         "keyfile": "/etc/ssl/private/apache-selfsigned.key"
     })
     http_server.listen(443)
+    '''
 
-    '''
     app.listen(8888)
-    '''
+
     tornado.ioloop.IOLoop.current().start()
